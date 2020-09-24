@@ -20,7 +20,7 @@ describe("register", () => {
     verifyUsername.mockImplementation(() => false);
 
     expect(validate(null, null)).toBeFalsy();
-    // TODO feedback: 是出于什么样的考虑，异步测试的时候，不使用anync/await？
+    // TODO feedback: 是出于什么样的考虑，异步测试的时候，不使用async/await？
     return register(null, null).catch((error) =>
       expect(error.message).toBe("wrong username or password")
     );
