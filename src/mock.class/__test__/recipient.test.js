@@ -1,4 +1,7 @@
-import Recipient from "../Recipient";
+// TODO feedback: 这里有一个eslint的错
+
+// import Recipient from "../Recipient";
+import Recipient from "../recipient";
 
 describe("acceptInjection", () => {
   beforeEach(() => {

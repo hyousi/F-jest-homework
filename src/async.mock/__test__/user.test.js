@@ -11,6 +11,7 @@ describe("register", () => {
     axios.post.mockResolvedValueOnce({ data: "success" });
 
     expect(validate(null, null)).toBeTruthy();
+    // TODO feedback: 就用async/await它不香吗？
     return register(null, null).then((data) => expect(data).toBe("success"));
   });
 
@@ -19,6 +20,7 @@ describe("register", () => {
     verifyUsername.mockImplementation(() => false);
 
     expect(validate(null, null)).toBeFalsy();
+    // TODO feedback: 是出于什么样的考虑，异步测试的时候，不使用anync/await？
     return register(null, null).catch((error) =>
       expect(error.message).toBe("wrong username or password")
     );
